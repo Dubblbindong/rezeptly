@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung — Rezeptly</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F9FA; color: #1A1A2E; line-height: 1.7; }
+    .container { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .date { font-size: 14px; color: #9CA3AF; margin-bottom: 32px; }
+    h2 { font-size: 20px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; }
+    p, li { font-size: 15px; color: #374151; margin-bottom: 12px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    a { color: #FF6B35; }
+    .back { display: inline-block; margin-bottom: 24px; font-size: 14px; color: #6B7280; text-decoration: none; }
+    .back:hover { color: #FF6B35; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back">&larr; Zurück</a>
+    <h1>Datenschutzerklärung</h1>
+    <p class="date">Stand: 26. März 2026</p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Verantwortlich für die Datenverarbeitung in der App „Rezeptly" ist:<br>
+      Dubblbindong<br>
+      E-Mail: <a href="mailto:support@rezeptly.app">support@rezeptly.app</a>
+    </p>
+
+    <h2>2. Welche Daten wir erheben</h2>
+    <p>Wir erheben und verarbeiten folgende personenbezogene Daten:</p>
+    <ul>
+      <li><strong>Account-Daten:</strong> E-Mail-Adresse, optionaler Anzeigename (bei Registrierung per E-Mail) oder von Apple bereitgestellte Daten (bei Sign in with Apple).</li>
+      <li><strong>Rezeptdaten:</strong> Von dir erstellte oder importierte Rezepte (Titel, Zutaten, Schritte, Bilder, Nährwerte). Bei Pro-Nutzern werden diese in unserer Cloud-Datenbank gespeichert.</li>
+      <li><strong>Einkaufsliste:</strong> Artikel auf deiner Einkaufsliste (bei Pro-Nutzern cloud-synchronisiert).</li>
+      <li><strong>Wochenplaner:</strong> Deine Mahlzeitenplanung wird lokal auf dem Gerät gespeichert.</li>
+      <li><strong>Nutzungsdaten:</strong> Anzahl der täglichen KI-Imports (für Rate Limiting).</li>
+      <li><strong>Abo-Daten:</strong> Informationen zu deinem Abonnement-Status (Free/Pro).</li>
+    </ul>
+
+    <h2>3. Zweck der Datenverarbeitung</h2>
+    <ul>
+      <li>Bereitstellung der App-Funktionen (Rezeptverwaltung, Einkaufsliste, Wochenplaner)</li>
+      <li>Authentifizierung und Kontoverwaltung</li>
+      <li>Cloud-Synchronisation für Pro-Nutzer</li>
+      <li>KI-gestützte Rezeptanalyse (über Anthropic Claude API)</li>
+      <li>Abonnement-Verwaltung (über Apple In-App-Purchases)</li>
+    </ul>
+
+    <h2>4. Drittanbieter und Auftragsverarbeiter</h2>
+    <ul>
+      <li><strong>Supabase (Cloud-Datenbank & Authentifizierung):</strong> Deine Account- und Rezeptdaten werden bei Supabase Inc. (USA) gespeichert. Server-Standort: EU (eu-west-3). Supabase erfüllt die DSGVO-Anforderungen.</li>
+      <li><strong>Anthropic (KI-Rezeptanalyse):</strong> Beim Import von Rezepten wird der Text an die Claude API von Anthropic PBC (USA) gesendet. Es werden keine personenbezogenen Daten übermittelt — nur der Rezepttext.</li>
+      <li><strong>Apple (Authentifizierung & Zahlungen):</strong> Bei Sign in with Apple und In-App-Purchases gelten Apples Datenschutzrichtlinien.</li>
+      <li><strong>TikTok/Instagram (oEmbed API):</strong> Beim Import von Rezepten wird die öffentliche oEmbed-Schnittstelle der Plattformen abgefragt, um Rezeptbeschreibungen zu laden.</li>
+    </ul>
+
+    <h2>5. Datenspeicherung und Löschung</h2>
+    <p>
+      Free-Nutzer: Alle Daten werden ausschließlich lokal auf dem Gerät gespeichert und bei App-Löschung entfernt.<br>
+      Pro-Nutzer: Cloud-Daten (Rezepte, Einkaufsliste) werden in unserer Supabase-Datenbank gespeichert. Bei Kündigung des Abos bleiben die Daten erhalten, werden aber nicht mehr synchronisiert.
+    </p>
+    <p>
+      Du kannst deinen Account und alle damit verbundenen Daten jederzeit löschen lassen. Schreibe dazu eine E-Mail an <a href="mailto:support@rezeptly.app">support@rezeptly.app</a>. Wir löschen deine Daten innerhalb von 30 Tagen.
+    </p>
+
+    <h2>6. Deine Rechte (DSGVO)</h2>
+    <p>Du hast das Recht auf:</p>
+    <ul>
+      <li>Auskunft über deine gespeicherten Daten</li>
+      <li>Berichtigung unrichtiger Daten</li>
+      <li>Löschung deiner Daten</li>
+      <li>Einschränkung der Verarbeitung</li>
+      <li>Datenübertragbarkeit</li>
+      <li>Widerspruch gegen die Verarbeitung</li>
+    </ul>
+    <p>Wende dich hierzu an <a href="mailto:support@rezeptly.app">support@rezeptly.app</a>.</p>
+
+    <h2>7. Cookies und Tracking</h2>
+    <p>Die App verwendet keine Cookies, kein Tracking und keine Analyse-Tools. Wir sammeln keine Werbe-IDs und erstellen keine Nutzerprofile.</p>
+
+    <h2>8. Änderungen</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Die aktuelle Version ist stets über die App oder diese Webseite abrufbar.</p>
+
+    <h2>9. Kontakt</h2>
+    <p>Bei Fragen zum Datenschutz erreichst du uns unter <a href="mailto:support@rezeptly.app">support@rezeptly.app</a>.</p>
+  </div>
+</body>
+</html>
