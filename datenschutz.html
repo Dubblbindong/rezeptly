@@ -35,11 +35,13 @@
     <p>Wir erheben und verarbeiten folgende personenbezogene Daten:</p>
     <ul>
       <li><strong>Account-Daten:</strong> E-Mail-Adresse, optionaler Anzeigename (bei Registrierung per E-Mail) oder von Apple bereitgestellte Daten (bei Sign in with Apple).</li>
-      <li><strong>Rezeptdaten:</strong> Von dir erstellte oder importierte Rezepte (Titel, Zutaten, Schritte, Bilder, Nährwerte). Bei Pro-Nutzern werden diese in unserer Cloud-Datenbank gespeichert.</li>
+      <li><strong>Rezeptdaten:</strong> Von dir erstellte oder importierte Rezepte (Titel, Zutaten, Schritte, Nährwerte). Bei Pro-Nutzern werden diese in unserer Cloud-Datenbank gespeichert.</li>
+      <li><strong>Fotos:</strong> Wenn du Rezeptfotos über die Kamera oder Galerie aufnimmst, werden diese lokal auf dem Gerät gespeichert. Es findet kein automatischer Upload in die Cloud statt.</li>
       <li><strong>Einkaufsliste:</strong> Artikel auf deiner Einkaufsliste (bei Pro-Nutzern cloud-synchronisiert).</li>
       <li><strong>Wochenplaner:</strong> Deine Mahlzeitenplanung wird lokal auf dem Gerät gespeichert.</li>
       <li><strong>Nutzungsdaten:</strong> Anzahl der täglichen KI-Imports (für Rate Limiting).</li>
       <li><strong>Abo-Daten:</strong> Informationen zu deinem Abonnement-Status (Free/Pro).</li>
+      <li><strong>Push-Benachrichtigungen:</strong> Timer-Benachrichtigungen werden lokal auf dem Gerät geplant. Es werden keine Daten an externe Server gesendet.</li>
     </ul>
 
     <h2>3. Zweck der Datenverarbeitung</h2>
@@ -47,8 +49,10 @@
       <li>Bereitstellung der App-Funktionen (Rezeptverwaltung, Einkaufsliste, Wochenplaner)</li>
       <li>Authentifizierung und Kontoverwaltung</li>
       <li>Cloud-Synchronisation für Pro-Nutzer</li>
-      <li>KI-gestützte Rezeptanalyse (über Anthropic Claude API)</li>
+      <li>KI-gestützte Rezeptanalyse und Nährwertschätzung (über Anthropic Claude API)</li>
       <li>Abonnement-Verwaltung (über Apple In-App-Purchases)</li>
+      <li>Lokale Push-Benachrichtigungen für Koch-Timer</li>
+      <li>Kamerazugriff für Rezeptfotos (nur bei expliziter Erlaubnis)</li>
     </ul>
 
     <h2>4. Drittanbieter und Auftragsverarbeiter</h2>
@@ -56,7 +60,7 @@
       <li><strong>Supabase (Cloud-Datenbank & Authentifizierung):</strong> Deine Account- und Rezeptdaten werden bei Supabase Inc. (USA) gespeichert. Server-Standort: EU (eu-west-3). Supabase erfüllt die DSGVO-Anforderungen.</li>
       <li><strong>Anthropic (KI-Rezeptanalyse):</strong> Beim Import von Rezepten wird der Text an die Claude API von Anthropic PBC (USA) gesendet. Es werden keine personenbezogenen Daten übermittelt — nur der Rezepttext.</li>
       <li><strong>Apple (Authentifizierung & Zahlungen):</strong> Bei Sign in with Apple und In-App-Purchases gelten Apples Datenschutzrichtlinien.</li>
-      <li><strong>TikTok/Instagram (oEmbed API):</strong> Beim Import von Rezepten wird die öffentliche oEmbed-Schnittstelle der Plattformen abgefragt, um Rezeptbeschreibungen zu laden.</li>
+      <li><strong>TikTok/Instagram/Pinterest:</strong> Beim Import von Rezepten werden die öffentlichen Schnittstellen (oEmbed API, Meta-Tags) der Plattformen über unseren Server abgefragt, um Rezeptbeschreibungen und Vorschaubilder zu laden. Es werden keine personenbezogenen Daten an diese Plattformen übermittelt.</li>
     </ul>
 
     <h2>5. Datenspeicherung und Löschung</h2>
