@@ -22,7 +22,7 @@
   <div class="container">
     <a href="index.html" class="back">&larr; Zurück</a>
     <h1>Datenschutzerklärung</h1>
-    <p class="date">Stand: 26. März 2026</p>
+    <p class="date">Stand: 5. Oktober 2026</p>
 
     <h2>1. Verantwortlicher</h2>
     <p>
@@ -39,6 +39,8 @@
       <li><strong>Fotos:</strong> Wenn du Rezeptfotos über die Kamera oder Galerie aufnimmst, werden diese lokal auf dem Gerät gespeichert. Es findet kein automatischer Upload in die Cloud statt.</li>
       <li><strong>Einkaufsliste:</strong> Artikel auf deiner Einkaufsliste (bei Pro-Nutzern cloud-synchronisiert).</li>
       <li><strong>Wochenplaner:</strong> Deine Mahlzeitenplanung wird lokal auf dem Gerät gespeichert.</li>
+      <li><strong>Vorrat:</strong> Zutaten, die du einträgst, ihr Status (da/leer) und optional ein Haltbarkeitsdatum. Sie werden nur lokal auf deinem Gerät gespeichert.</li>
+      <li><strong>Barcode-Scan:</strong> Das Kamerabild wird nur auf dem Gerät ausgewertet und weder gespeichert noch übertragen. Gescannte Nummern und von dir vergebene Produktnamen merkt sich die App lokal auf dem Gerät.</li>
       <li><strong>Nutzungsdaten:</strong> Anzahl der täglichen KI-Imports (für Rate Limiting).</li>
       <li><strong>Abo-Daten:</strong> Informationen zu deinem Abonnement-Status (Free/Pro).</li>
       <li><strong>Push-Benachrichtigungen:</strong> Timer-Benachrichtigungen werden lokal auf dem Gerät geplant. Es werden keine Daten an externe Server gesendet.</li>
@@ -47,13 +49,15 @@
     <h2>3. Zweck der Datenverarbeitung</h2>
     <ul>
       <li>Bereitstellung der App-Funktionen (Rezeptverwaltung, Einkaufsliste, Wochenplaner)</li>
+      <li>Vorratsverwaltung und Rezeptvorschläge aus deinem Vorrat</li>
       <li>Authentifizierung und Kontoverwaltung</li>
       <li>Cloud-Synchronisation für Pro-Nutzer</li>
       <li>KI-gestützte Rezeptanalyse und Nährwertschätzung (über Anthropic Claude API)</li>
       <li>Abonnement-Verwaltung (über Apple In-App-Purchases)</li>
       <li>Lokale Push-Benachrichtigungen für Koch-Timer</li>
-      <li>Kamerazugriff für Rezeptfotos (nur bei expliziter Erlaubnis)</li>
+      <li>Kamerazugriff für Rezeptfotos und das Scannen von Barcodes (nur bei expliziter Erlaubnis)</li>
     </ul>
+    <p>Rechtsgrundlage für Vorrat, Barcode-Scan und die Abfrage bei Open Food Facts ist Art. 6 Abs. 1 lit. b DSGVO (die von dir angestoßene Funktion).</p>
 
     <h2>4. Drittanbieter und Auftragsverarbeiter</h2>
     <ul>
@@ -61,6 +65,7 @@
       <li><strong>Anthropic (KI-Rezeptanalyse):</strong> Beim Import von Rezepten wird der Text an die Claude API von Anthropic PBC (USA) gesendet. Es werden keine personenbezogenen Daten übermittelt — nur der Rezepttext.</li>
       <li><strong>Apple (Authentifizierung & Zahlungen):</strong> Bei Sign in with Apple und In-App-Purchases gelten Apples Datenschutzrichtlinien.</li>
       <li><strong>TikTok/Instagram/Pinterest:</strong> Beim Import von Rezepten werden die öffentlichen Schnittstellen (oEmbed API, Meta-Tags) der Plattformen über unseren Server abgefragt, um Rezeptbeschreibungen und Vorschaubilder zu laden. Es werden keine personenbezogenen Daten an diese Plattformen übermittelt.</li>
+      <li><strong>Open Food Facts (Produktdaten):</strong> Wenn du einen Barcode scannst oder eine Barcode-Nummer eingibst, fragt die App die Nummer direkt von deinem Gerät aus bei der Datenbank von Open Food Facts ab (Open Food Facts, gemeinnütziger Verein, Frankreich). Unsere Server sind daran nicht beteiligt. Übertragen werden technisch deine IP-Adresse, die Barcode-Nummer und eine App-Kennung, keine Kontodaten. Nummern, die die App schon kennt, und Codes aus dem Markt (z. B. von der Waage) fragt sie nicht ab. Open Food Facts verarbeitet diese Daten in eigener Verantwortung, siehe deren Datenschutzerklärung (<a href="https://world.openfoodfacts.org/privacy">https://world.openfoodfacts.org/privacy</a>). Produktdaten stehen unter der Open Database License (ODbL).</li>
     </ul>
 
     <h2>5. Datenspeicherung und Löschung</h2>
@@ -70,6 +75,9 @@
     </p>
     <p>
       Du kannst deinen Account und alle damit verbundenen Daten jederzeit löschen lassen. Schreibe dazu eine E-Mail an <a href="mailto:dev.tobi@icloud.com">dev.tobi@icloud.com</a>. Wir löschen deine Daten innerhalb von 30 Tagen.
+    </p>
+    <p>
+      Löschst du dein Konto, entfernt die App auf diesem Gerät deinen Vorrat, die gemerkten Barcodes und deinen Wochenplan. Vorrat und Wochenplan anderer Konten auf demselben Gerät bleiben.
     </p>
 
     <h2>6. Deine Rechte (DSGVO)</h2>
