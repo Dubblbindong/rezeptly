@@ -22,7 +22,7 @@
   <div class="container">
     <a href="index.html" class="back">&larr; Zurück</a>
     <h1>Datenschutzerklärung</h1>
-    <p class="date">Stand: 5. Oktober 2026</p>
+    <p class="date">Stand: 6. Oktober 2026</p>
 
     <h2>1. Verantwortlicher</h2>
     <p>
@@ -38,10 +38,12 @@
       <li><strong>Rezeptdaten:</strong> Von dir erstellte oder importierte Rezepte (Titel, Zutaten, Schritte, Nährwerte). Bei Pro-Nutzern werden diese in unserer Cloud-Datenbank gespeichert.</li>
       <li><strong>Fotos:</strong> Wenn du Rezeptfotos über die Kamera oder Galerie aufnimmst, werden diese lokal auf dem Gerät gespeichert. Es findet kein automatischer Upload in die Cloud statt.</li>
       <li><strong>Einkaufsliste:</strong> Artikel auf deiner Einkaufsliste (bei Pro-Nutzern cloud-synchronisiert).</li>
-      <li><strong>Wochenplaner:</strong> Deine Mahlzeitenplanung wird lokal auf dem Gerät gespeichert.</li>
-      <li><strong>Vorrat:</strong> Zutaten, die du einträgst, ihr Status (da/leer) und optional ein Haltbarkeitsdatum. Sie werden nur lokal auf deinem Gerät gespeichert.</li>
+      <li><strong>Wochenplaner:</strong> Deine Mahlzeitenplanung wird lokal auf dem Gerät gespeichert. Im Haushalt wird sie zusätzlich bei Supabase gespeichert.</li>
+      <li><strong>Vorrat:</strong> Zutaten, die du einträgst, ihr Status (da/leer) und optional ein Haltbarkeitsdatum. Ohne Pro nur lokal auf deinem Gerät, mit Pro zusätzlich in unserer Supabase-Datenbank (EU) zur Synchronisation zwischen deinen Geräten.</li>
       <li><strong>Barcode-Scan:</strong> Das Kamerabild wird nur auf dem Gerät ausgewertet und weder gespeichert noch übertragen. Gescannte Nummern und von dir vergebene Produktnamen merkt sich die App lokal auf dem Gerät.</li>
-      <li><strong>Nutzungsdaten:</strong> Anzahl der täglichen KI-Imports (für Rate Limiting).</li>
+      <li><strong>Nutzungsdaten:</strong> Anzahl deiner Link-Abrufe und KI-Imports pro Tag (Nutzer-ID, Datum, Zähler) für die Tageslimits.</li>
+      <li><strong>Rezepttexte beim Import:</strong> Beschreibungen von Beiträgen, die du per Link importierst, und Texte, die du selbst einfügst. Wohin sie gehen, steht in den Abschnitten 5 und 6.</li>
+      <li><strong>Einwilligung zur KI-Erkennung:</strong> Deine Entscheidung, ob Rezepte mit Claude erkannt werden dürfen. Sie wird nur lokal auf deinem Gerät gespeichert, getrennt für jedes Konto.</li>
       <li><strong>Abo-Daten:</strong> Informationen zu deinem Abonnement-Status (Free/Pro).</li>
       <li><strong>Push-Benachrichtigungen:</strong> Timer-Benachrichtigungen werden lokal auf dem Gerät geplant. Es werden keine Daten an externe Server gesendet.</li>
     </ul>
@@ -52,7 +54,7 @@
       <li>Vorratsverwaltung und Rezeptvorschläge aus deinem Vorrat</li>
       <li>Authentifizierung und Kontoverwaltung</li>
       <li>Cloud-Synchronisation für Pro-Nutzer</li>
-      <li>KI-gestützte Rezeptanalyse und Nährwertschätzung (über Anthropic Claude API)</li>
+      <li>KI-gestützte Rezepterkennung und Nährwertschätzung mit Claude von Anthropic, nur mit deiner Einwilligung (Abschnitt 5). Ohne Einwilligung erkennt die App Rezepte auf deinem Gerät.</li>
       <li>Abonnement-Verwaltung (über Apple In-App-Purchases)</li>
       <li>Lokale Push-Benachrichtigungen für Koch-Timer</li>
       <li>Kamerazugriff für Rezeptfotos und das Scannen von Barcodes (nur bei expliziter Erlaubnis)</li>
@@ -61,14 +63,55 @@
 
     <h2>4. Drittanbieter und Auftragsverarbeiter</h2>
     <ul>
-      <li><strong>Supabase (Cloud-Datenbank & Authentifizierung):</strong> Deine Account- und Rezeptdaten werden bei Supabase Inc. (USA) gespeichert. Server-Standort: EU (eu-west-3). Supabase erfüllt die DSGVO-Anforderungen.</li>
-      <li><strong>Anthropic (KI-Rezeptanalyse):</strong> Beim Import von Rezepten wird der Text an die Claude API von Anthropic PBC (USA) gesendet. Es werden keine personenbezogenen Daten übermittelt — nur der Rezepttext.</li>
+      <li><strong>Supabase (Cloud-Datenbank & Authentifizierung):</strong> Deine Account- und Rezeptdaten werden bei Supabase Inc. (USA) gespeichert. Server-Standort: EU (eu-west-3). Supabase erfüllt die DSGVO-Anforderungen. Über Supabase laufen auch unsere Serverfunktionen für den Import (Abschnitte 5 und 6). Bei jeder Anfrage verarbeitet Supabase technisch bedingt die IP-Adresse deines Geräts und protokolliert die Anfrage; die Protokolle werden nach Angaben von Supabase nach einem Tag gelöscht.</li>
+      <li><strong>Anthropic (KI-Rezepterkennung):</strong> Nur mit deiner Einwilligung. Was gesendet wird und wie lange Anthropic es speichert, steht in Abschnitt 5.</li>
       <li><strong>Apple (Authentifizierung & Zahlungen):</strong> Bei Sign in with Apple und In-App-Purchases gelten Apples Datenschutzrichtlinien.</li>
-      <li><strong>TikTok/Instagram/Pinterest:</strong> Beim Import von Rezepten werden die öffentlichen Schnittstellen (oEmbed API, Meta-Tags) der Plattformen über unseren Server abgefragt, um Rezeptbeschreibungen und Vorschaubilder zu laden. Es werden keine personenbezogenen Daten an diese Plattformen übermittelt.</li>
+      <li><strong>TikTok/Instagram/Pinterest und Unsplash:</strong> Beim Import per Link rufen wir die öffentlichen Beitragsdaten ab. Vorschaubilder und Platzhalterfotos lädt die App direkt von diesen Anbietern. Details in Abschnitt 6.</li>
       <li><strong>Open Food Facts (Produktdaten):</strong> Wenn du einen Barcode scannst oder eine Barcode-Nummer eingibst, fragt die App die Nummer direkt von deinem Gerät aus bei der Datenbank von Open Food Facts ab (Open Food Facts, gemeinnütziger Verein, Frankreich). Unsere Server sind daran nicht beteiligt. Übertragen werden technisch deine IP-Adresse, die Barcode-Nummer und eine App-Kennung, keine Kontodaten. Nummern, die die App schon kennt, und Codes aus dem Markt (z. B. von der Waage) fragt sie nicht ab. Open Food Facts verarbeitet diese Daten in eigener Verantwortung, siehe deren Datenschutzerklärung (<a href="https://world.openfoodfacts.org/privacy">https://world.openfoodfacts.org/privacy</a>). Produktdaten stehen unter der Open Database License (ODbL).</li>
     </ul>
 
-    <h2>5. Datenspeicherung und Löschung</h2>
+    <h2>5. KI-Rezepterkennung mit Claude (Anthropic)</h2>
+    <p>
+      Rezeptly kann Rezepte mit Claude erkennen, einem KI-Modell von Anthropic. Das passiert nur, wenn du vorher in der App eingewilligt hast. Ohne Einwilligung erkennt die App Rezepte ausschließlich auf deinem Gerät (mit Apple Intelligence oder einer einfachen Texterkennung). Der Text verlässt dein Gerät dafür nicht.
+    </p>
+    <p><strong>Welche Daten an Anthropic gehen</strong></p>
+    <ul>
+      <li>Der Rezepttext, aus dem das Rezept erkannt werden soll: beim Import per Link die Beschreibung (Caption) des Beitrags, die wir vorher abgerufen haben (Abschnitt 6), bei „Text einfügen“ der Text, den du einfügst. Gesendet werden höchstens die ersten 5.000 Zeichen.</li>
+      <li>Der Text kann personenbezogene Daten enthalten, etwa den Namen oder Benutzernamen der Person, die den Beitrag veröffentlicht hat, oder Angaben, die du selbst einfügst. Füge deshalb bitte keine Texte mit sensiblen persönlichen Angaben ein.</li>
+      <li>Nicht an Anthropic gehen: dein Name, deine E-Mail-Adresse, deine Nutzer-ID, der Link zum Beitrag und das Vorschaubild.</li>
+    </ul>
+    <p><strong>Zwei Wege zu Claude</strong></p>
+    <ul>
+      <li><strong>Mit Pro-Abo über unseren Server:</strong> Die App schickt den Text mit deinem Anmelde-Token an unsere Serverfunktion bei Supabase. Dort prüfen wir dein Abo und zählen die Anfrage für das Tageslimit (Nutzer-ID, Datum, Anzahl). An Anthropic leiten wir nur den Rezepttext weiter. Anthropic sieht dabei die IP-Adresse unseres Servers, nicht deine. Den Text speichern wir auf unserem Server nicht, zurück an die App geht nur das erkannte Rezept. Anthropic verarbeitet die Daten in unserem Auftrag (Auftragsverarbeitung nach Art. 28 DSGVO) auf Grundlage der Commercial Terms und des Data Processing Addendum von Anthropic.</li>
+      <li><strong>Mit eigenem API-Schlüssel:</strong> Hast du in den Einstellungen einen eigenen Claude-API-Schlüssel hinterlegt, schickt die App den Text direkt von deinem Gerät an die Claude API (api.anthropic.com). Anthropic erhält dabei auch deinen Schlüssel und die IP-Adresse deines Geräts. Die Anfrage läuft über dein eigenes Anthropic-Konto, es gelten die Bedingungen zwischen dir und Anthropic. Wir erhalten diese Daten nicht. Mit Pro-Abo springt dein Schlüssel nur ein, wenn unser Server nicht erreichbar ist.</li>
+    </ul>
+    <p><strong>Zweck:</strong> Aus dem Text ein strukturiertes Rezept erstellen (Titel, Zutaten, Schritte, Portionen, Zubereitungszeit, Schwierigkeit, Kategorien) und Nährwerte pro Portion schätzen.</p>
+    <p><strong>Rechtsgrundlage:</strong> Deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die du vor dem ersten Import mit Claude in der App erteilst. Die Zählung für das Tageslimit dient der Vertragserfüllung und dem Schutz vor Missbrauch und unverhältnismäßigen Kosten (Art. 6 Abs. 1 lit. b und f DSGVO).</p>
+    <p><strong>Widerruf:</strong> Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, in der App unter Profil → Einstellungen → Datenschutz („Rezepte mit Claude erkennen“ ausschalten). Danach erkennt die App Rezepte nur noch auf deinem Gerät. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt.</p>
+    <p><strong>Empfänger:</strong> Unser Vertragspartner ist Anthropic Ireland, Limited (Dublin, Irland). Verarbeitet werden die Daten auch durch Anthropic, PBC in den USA.</p>
+    <p><strong>Übermittlung in die USA:</strong> Für die Übermittlung gelten die Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO), die Bestandteil des Data Processing Addendum von Anthropic sind. Trotz dieser Garantien ist nicht auszuschließen, dass US-Behörden auf die Daten zugreifen.</p>
+    <p><strong>Speicherdauer:</strong> Nach Angaben von Anthropic (Stand 1. Juli 2026) löscht Anthropic Eingaben und Ausgaben der API automatisch innerhalb von 30 Tagen nach Eingang bzw. Erstellung. Ausnahmen: Stuft Anthropic eine Anfrage als Verstoß gegen seine Nutzungsrichtlinien ein, können Eingaben und Ausgaben bis zu 2 Jahre und die Ergebnisse der Einstufung bis zu 7 Jahre gespeichert werden; außerdem, soweit das Gesetz es verlangt. Nach den Commercial Terms darf Anthropic die Inhalte nicht zum Training seiner Modelle verwenden. Bei uns bleibt das erkannte Rezept wie deine anderen Rezepte gespeichert (Abschnitt 8), den Zähler für das Tageslimit speichern wir bis zur Löschung deines Kontos.</p>
+
+    <h2>6. Abruf von Beiträgen bei TikTok, Instagram und Pinterest</h2>
+    <p>
+      Beim Import per Link schickt die App den Link mit deinem Anmelde-Token an unsere Serverfunktion bei Supabase. Wir zählen die Anfrage für das Tageslimit (Nutzer-ID, Datum, Anzahl) und rufen dann die öffentliche Beitragsseite bzw. die öffentliche oEmbed-Schnittstelle der Plattform ab. Zurück an die App gehen Beschreibung, Titel, gegebenenfalls der Name des Accounts und der Link zum Vorschaubild. Die Plattform sieht dabei den Link und die IP-Adresse unseres Servers, aber keine Daten zu dir. Eine KI ist an diesem Schritt nicht beteiligt.
+    </p>
+    <ul>
+      <li><strong>Ausweichweg:</strong> Ist unser Server nicht erreichbar, ruft die App bei TikTok und Instagram die öffentlichen Daten direkt von deinem Gerät ab. Dann erhält die Plattform den Link und die IP-Adresse deines Geräts, wie beim Öffnen des Links im Browser.</li>
+      <li><strong>Bilder:</strong> Vorschaubilder lädt die App direkt von den Servern der jeweiligen Plattform. Rezepte ohne eigenes Bild zeigen ein Platzhalterfoto von Unsplash (images.unsplash.com). Dabei erhält der jeweilige Anbieter die IP-Adresse deines Geräts.</li>
+      <li><strong>Zweck und Rechtsgrundlage:</strong> Rezepttext und Bild des Beitrags laden, den du importieren möchtest. Das dient der Erfüllung des Nutzungsvertrags, weil du den Import selbst auslöst (Art. 6 Abs. 1 lit. b DSGVO); Ausweichweg und Bilder beruhen auf unserem berechtigten Interesse an einer funktionierenden App (Art. 6 Abs. 1 lit. f DSGVO).</li>
+      <li>Für die Verarbeitung durch die Plattformen und Unsplash gelten deren eigene Datenschutzerklärungen.</li>
+    </ul>
+
+    <h2>7. Haushalt (gemeinsame Haushaltsverwaltung)</h2>
+    <p>
+      Als Pro-Nutzer kannst du einen Haushalt gründen und bis zu 5 weitere Personen per Einladungscode oder -link einladen. Alle Mitglieder sehen und bearbeiten gemeinsam Rezepte, Einkaufsliste, Wochenplan und Vorrat. Bei Supabase (EU) speichern wir die Konto-Haushalt-Zuordnung, deine Rolle (Besitzer oder Mitglied), das Beitrittsdatum, deinen Anzeigenamen für die Mitgliederliste und Einladungscodes (gültig für 48 Stunden, einmal nutzbar). Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.
+    </p>
+    <p>
+      Beim Beitritt eines Haushalts werden deine Rezepte, Einkaufsliste, Wochenplan und Vorrat Teil des Haushalts und sind für alle Mitglieder sichtbar und bearbeitbar. Beim Austritt erhältst du eine Kopie der Haushalts-Rezepte; die Haushaltsdaten bleiben beim Besitzer. Löschst du dein Konto als Besitzer eines Haushalts, wird der Haushalt aufgelöst.
+    </p>
+
+    <h2>8. Datenspeicherung und Löschung</h2>
     <p>
       Free-Nutzer: Alle Daten werden ausschließlich lokal auf dem Gerät gespeichert und bei App-Löschung entfernt.<br>
       Pro-Nutzer: Cloud-Daten (Rezepte, Einkaufsliste) werden in unserer Supabase-Datenbank gespeichert. Bei Kündigung des Abos bleiben die Daten erhalten, werden aber nicht mehr synchronisiert.
@@ -79,8 +122,11 @@
     <p>
       Löschst du dein Konto, entfernt die App auf diesem Gerät deinen Vorrat, die gemerkten Barcodes und deinen Wochenplan. Vorrat und Wochenplan anderer Konten auf demselben Gerät bleiben.
     </p>
+    <p>
+      Der Vorrat in der Cloud wird mit deinem Konto gelöscht. Endet Pro, bleibt die Cloud-Kopie gespeichert, damit dein Vorrat bei erneutem Pro wieder da ist; synchronisiert wird sie nicht mehr. Auf Wunsch löschen wir sie vorher: Schreib uns von der E-Mail-Adresse deines Kontos an <a href="mailto:dev.tobi@icloud.com">dev.tobi@icloud.com</a>. Der Vorrat auf deinen Geräten bleibt davon unberührt.
+    </p>
 
-    <h2>6. Deine Rechte (DSGVO)</h2>
+    <h2>9. Deine Rechte (DSGVO)</h2>
     <p>Du hast das Recht auf:</p>
     <ul>
       <li>Auskunft über deine gespeicherten Daten</li>
@@ -89,16 +135,18 @@
       <li>Einschränkung der Verarbeitung</li>
       <li>Datenübertragbarkeit</li>
       <li>Widerspruch gegen die Verarbeitung</li>
+      <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+      <li>Beschwerde bei einer Datenschutz-Aufsichtsbehörde (Art. 77 DSGVO)</li>
     </ul>
     <p>Wende dich hierzu an <a href="mailto:dev.tobi@icloud.com">dev.tobi@icloud.com</a>.</p>
 
-    <h2>7. Cookies und Tracking</h2>
+    <h2>10. Cookies und Tracking</h2>
     <p>Die App verwendet keine Cookies, kein Tracking und keine Analyse-Tools. Wir sammeln keine Werbe-IDs und erstellen keine Nutzerprofile.</p>
 
-    <h2>8. Änderungen</h2>
+    <h2>11. Änderungen</h2>
     <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Die aktuelle Version ist stets über die App oder diese Webseite abrufbar.</p>
 
-    <h2>9. Kontakt</h2>
+    <h2>12. Kontakt</h2>
     <p>Bei Fragen zum Datenschutz erreichst du uns unter <a href="mailto:dev.tobi@icloud.com">dev.tobi@icloud.com</a>.</p>
   </div>
 </body>
